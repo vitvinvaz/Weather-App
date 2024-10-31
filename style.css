@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+#back{
+    background-image: url(images/background.jpg);
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#weather{
+    background-color: transparent;
+    box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.2),5px 5px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding:40px;
+}
+
+#weather #inp{
+    display: flex;
+}
+
+#weather #inp input{
+    outline: none;
+    border: 0;
+    border-radius: 20px;
+    height: 40px;
+    width: 200px;
+    margin-right: 10px;
+    background-color: transparent;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+    font-size: 15px;
+    font-weight: 500;
+    color: aliceblue;
+    text-align: center;
+}    
+#weather #inp input:focus {
+    outline:none;
+}
+#weather #inp button{
+    border-radius: 50%;
+    margin-top:px;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    background-color: blanchedalmond;
+}
+
+#weather #inp button img{
+    height: 20px;
+    width: 20px;
+    margin-right: 2px;
+}
+
+#weather #cloud img{
+    width: 150px;
+    height: 150px;
+    margin-left: 45px;
+}
+
+#weather #degree h1{
+    font-size: 60px;
+    margin-left: 55px;
+    color: white;
+    margin-top: -30px;
+}
+#weather #degree h2{
+    color: white;
+    text-align: center;
+    margin-top: -20px;
+}
+
+#info{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+#humid , #wind{
+    display: flex;
+    align-items: center;
+}
+
+#info img{
+    height: 30px;
+    width: 30px;
+}
+
+#wind{
+    margin-left: 30px;
+}
+
+#info h4,h5{
+    margin-left: 10px;
+    color: aliceblue;
+    font-size: 13px;
+}
+
+.disp{
+    display: none;
+}
+
+.error{
+    text-align: center;
+    color:aliceblue;
+    margin-top: 10px;
+    margin-left: -50px;
+    display: none;
+}
