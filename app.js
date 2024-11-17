@@ -1,18 +1,15 @@
- import {details} from "./constants.js"
-const apiKey = details.key;
+const apiKey = process.env.API_KEY;
 const apiUrl = "https://api.openweathermap.org/data/2.5/weather?&units=metric";
-
 const searchbox = document.querySelector(".search input");
 const searchbtn = document.querySelector(".search button");
-const disp = document.querySelector(".disp");
-const error = document.querySelector(".error");
+const dispp = document.querySelector(".disp");
+const error1 = document.querySelector(".error");
 
 const weather_image = document.querySelector(".weather-img");
 
 async function checkWeather(city) {
     const response = await fetch(`${apiUrl}&q=${city}&appid=${apiKey}`);
-    let status = response.status;
-    if (status < 400) {
+    if (response.status < 400) {
         var data = await response.json();
         console.log(data);
 
@@ -36,11 +33,11 @@ async function checkWeather(city) {
         else if (data.weather[0].main == "Mist") {
             weather_image.src = "images/mist.png";
         }
-        error.style.display = "none";
-        disp.style.display = "block";
+        error1.style.display = "none";
+        dispp.style.display = "block";
     } else {
-        disp.style.display = "none";
-        error.style.display = "block";
+        dispp.style.display = "none";
+        error1.style.display = "block";
     }
 
 }
@@ -48,6 +45,5 @@ async function checkWeather(city) {
 searchbtn.addEventListener("click", () => {
     checkWeather(searchbox.value);
     document.querySelector(".disp").style.display = "block";
-
 })
 
